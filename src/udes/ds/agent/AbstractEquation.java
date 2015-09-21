@@ -32,5 +32,4 @@ public abstract class AbstractEquation implements Equation, Derivable {
 	public void printUserReadable() {
 		System.out.println("y = " + this.getUserReadableString());
 	}
-
 }
