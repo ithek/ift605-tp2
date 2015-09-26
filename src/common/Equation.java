@@ -3,7 +3,7 @@
  * Equation.java
  * 3 sept. 08
  */
-package udes.ds.agent;
+package common;
 
 import java.io.Serializable;
 

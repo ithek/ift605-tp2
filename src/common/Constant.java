@@ -3,8 +3,7 @@
  * Constant.java
  * 3 sept. 08
  */
-package udes.ds.agent;
-
+package common;
 
 /**
  * Stores a fix value for x or y

@@ -1,24 +1,23 @@
 /**
  * udes.ds.rmi
- * SummativeEquation.java
+ * MultiplicativeEquation.java
  * 3 sept. 08
  */
-package udes.ds.agent;
-
+package common;
 
 /**
- * Stores an equation of the type f(x) + g(x)
+ * Stores an equation of the type f(x)*g(x)
  * 
  * @author      Luc Bergevin
- * @version     1.0
+ * @version     1.0          
  */
-public class SummativeEquation extends AbstractEquation {
+public class MultiplicativeEquation extends AbstractEquation {
 	
 	private static final long	 serialVersionUID	= 1L;
 	private AbstractEquation _first;
 	private AbstractEquation _second;
 	
-	public SummativeEquation(AbstractEquation first, AbstractEquation second) {
+	public MultiplicativeEquation(AbstractEquation first, AbstractEquation second) {
 		super();
 		_first = first;
 		_second = second;
@@ -32,22 +31,22 @@ public class SummativeEquation extends AbstractEquation {
 		return _second;
 	}
 
-	/**  
+	/**   
 	 * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)      
 	 */
 	public double getFunctionValue(double x) {
-		return (_first.getFunctionValue(x) + _second.getFunctionValue(x));
+		return (_first.getFunctionValue(x) * _second.getFunctionValue(x));
 	}
 
 	/**   
 	 * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
 	 */
-	public String getUserReadableString() {
-		return new String(_first.getUserReadableString() + " + " + _second.getUserReadableString());
+	protected String getUserReadableString() {
+		return new String("(" + _first.getUserReadableString() + ")(" + _second.getUserReadableString() + ")");
 	}
 
 	@Override
 	public AbstractEquation getDerivative() {
-		return new SummativeEquation(_first.getDerivative(), _second.getDerivative());	
+		return new MultiplicativeEquation(_first.getDerivative(), _second.getDerivative());	
 	}
 }

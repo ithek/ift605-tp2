@@ -3,8 +3,7 @@
  * BasicEquation.java
  * 3 sept. 08
  */
-package udes.ds.agent;
-
+package common;
 
 /**
  * Stores an equation of the type kx^n

@@ -3,7 +3,7 @@
  * AbstractEquation.java
  * 7 oct. 09
  */
-package udes.ds.agent;
+package common;
 
 /**
  * TODO add type comments
