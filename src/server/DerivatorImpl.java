@@ -2,18 +2,14 @@ package server;
 
 import java.rmi.RemoteException;
 
-import common.AbstractEquation;
-import common.BasicEquation;
+import common.Derivator;
+import common.Equation;
 
 public class DerivatorImpl implements Derivator {
 
 	@Override
-	public AbstractEquation getDerivative(String equation) throws RemoteException {
-		String equationParts[] = equation.split("\\^");
-		
-		AbstractEquation eq = new BasicEquation(1, Integer.parseInt(equationParts[1]));
-		
-		return eq.getDerivative();
+	public Equation getDerivative(Equation equation) throws RemoteException {
+		return equation.getDerivative();
 	}
 
 	@Override

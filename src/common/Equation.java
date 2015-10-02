@@ -30,4 +30,8 @@ public interface Equation extends Serializable {
 	 */
 	abstract public void printUserReadable() ;
 
+	Equation getDerivative();
+
+	String getUserReadableString();
+
 }

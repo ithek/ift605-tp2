@@ -5,6 +5,10 @@
  */
 package common;
 
+import java.rmi.Remote;
+
+import server.Derivable;
+
 /**
  * TODO add type comments
  * 
@@ -12,7 +16,7 @@ package common;
  * @version     1.0
  * @see          
  */
-public abstract class AbstractEquation implements Equation, Derivable {
+public abstract class AbstractEquation implements Remote, Equation, Derivable {
 
 	/**
 	 * 
@@ -24,7 +28,7 @@ public abstract class AbstractEquation implements Equation, Derivable {
 	 *
 	 * @return      String          
 	 */
-	abstract protected String getUserReadableString();
+	public abstract String getUserReadableString();
 
 	/**   
 	 * @see udes.ds.rmi.hw.Equation#printUserReadable()      

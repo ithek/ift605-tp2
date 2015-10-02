@@ -35,7 +35,7 @@ public class Constant extends AbstractEquation {
 	/**   
 	 * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
 	 */
-	protected String getUserReadableString() {
+	public String getUserReadableString() {
 		return Double.toString(_value);
 	}
 	

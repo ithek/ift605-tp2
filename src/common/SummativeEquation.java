@@ -14,20 +14,20 @@ package common;
 public class SummativeEquation extends AbstractEquation {
 	
 	private static final long	 serialVersionUID	= 1L;
-	private AbstractEquation _first;
-	private AbstractEquation _second;
+	private Equation _first;
+	private Equation _second;
 	
-	public SummativeEquation(AbstractEquation first, AbstractEquation second) {
+	public SummativeEquation(Equation equation, Equation equation2) {
 		super();
-		_first = first;
-		_second = second;
+		_first = equation;
+		_second = equation2;
 	}
 
-	public AbstractEquation getFirst() {
+	public Equation getFirst() {
 		return _first;
 	}
 
-	public AbstractEquation getSecond() {
+	public Equation getSecond() {
 		return _second;
 	}
 
@@ -42,11 +42,11 @@ public class SummativeEquation extends AbstractEquation {
 	 * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
 	 */
 	public String getUserReadableString() {
-		return new String(_first.getUserReadableString() + " + " + _second.getUserReadableString());
+		return new String("(" + _first.getUserReadableString() + ")(" + _second.getUserReadableString() + ")");
 	}
 
 	@Override
-	public AbstractEquation getDerivative() {
+	public Equation getDerivative() {
 		return new SummativeEquation(_first.getDerivative(), _second.getDerivative());	
 	}
 }

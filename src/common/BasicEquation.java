@@ -42,7 +42,7 @@ public class BasicEquation extends AbstractEquation {
 	/**  
 	 * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
 	 */
-	protected String getUserReadableString() {
+	public String getUserReadableString() {
 		return new String(Double.toString(_coefficient) + "x^" + Integer.toString(_exponent));
 	}
 
