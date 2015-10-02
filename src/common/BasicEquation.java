@@ -48,9 +48,15 @@ public class BasicEquation extends AbstractEquation {
 
 	@Override
 	public AbstractEquation getDerivative() {
-		if(_exponent < 2) {
-			return new Constant(1);
+		// l * x^1 becomes l through derivative
+		if(_exponent == 1) {
+			return new Constant(_coefficient);
 		}
+		// l * x^0 becomes 0 through derivative
+		else if(_exponent == 0) {
+			return new Constant(0);
+		}
+		// l * x^n becomes l*n*x^n-1 through derivative
 		else {
 			return new BasicEquation(_coefficient * _exponent, _exponent - 1);
 		}	
